@@ -1,0 +1,2 @@
+cusotmer contains orders vs salesman contains orders, 
+pros,cons, apple -sortings
