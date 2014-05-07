@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Controller;
 
 namespace Brewery
 {
@@ -20,9 +21,36 @@ namespace Brewery
     /// </summary>
     public partial class MainWindow : Window
     {
+        public FacadeController MyFacadeController;
         public MainWindow()
         {
             InitializeComponent();
+            MyFacadeController=new FacadeController();
+            SetBeerList();
+            SetCustomerList();
+            MyFacadeController.CreateDeliveryNote();
+        }
+
+        public void SetCustomerList()
+        {
+            lbBoxCustomer.Items.Clear();
+            foreach (string s in MyFacadeController.GetCustomers())
+            {
+                lbBoxCustomer.Items.Add(s);
+            }
+        }
+        public void SetBeerList()
+        {
+            LbBeer.Items.Clear();
+            foreach (string s in MyFacadeController.GetBeers())
+            {
+                LbBeer.Items.Add(s);
+            }
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

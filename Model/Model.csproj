@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Beer.cs" />
+    <Compile Include="BeerCollection.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerCollection.cs" />
     <Compile Include="DeliverNoteLine.cs" />
