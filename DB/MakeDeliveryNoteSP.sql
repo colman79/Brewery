@@ -50,6 +50,7 @@ end
 ------------------------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------------------------
+
 IF OBJECT_ID ( 'SP_create_DeliveryNote', 'P' ) IS NOT NULL 
     DROP PROCEDURE SP_create_DeliveryNote;
 go
@@ -111,7 +112,7 @@ end
 ------------------------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------------------------
-IF OBJECT_ID ( 'SP_get_customer_by_id', 'P' ) IS NOT NULL 
+IF OBJECT_ID ( 'SP_get_customer_by_id', 'P' ) IS NOT NULL
     DROP PROCEDURE SP_get_customer_by_id;
 go
 create procedure SP_get_customer_by_id
