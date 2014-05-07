@@ -4,24 +4,22 @@ go
 create procedure SP_create_Beer
 (
 @beerid int output,
-@name nvarchar(255)
+@name nvarchar(255),
+@volume int
 )
 as
 begin
 
-	insert into Beer(name) 
-	values		(@name);
+	insert into Beer(name,volume) 
+	values		(@name, @volume);
 
 	set @beerid = @@IDENTITY;
 end
 
-declare @beerid int;
-exec SP_create_Beer @beerid out,  'AmericanPaleAle';
-
 ------------------------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------------------------
-IF OBJECT_ID ( 'Brewery.SP_create_Customer', 'P' ) IS NOT NULL 
+IF OBJECT_ID ( 'SP_create_Customer', 'P' ) IS NOT NULL 
     DROP PROCEDURE SP_create_Customer;
 go
 create procedure SP_create_Customer
@@ -36,7 +34,6 @@ create procedure SP_create_Customer
 @Email nvarchar(255)
 )
 as
-
 begin
 
 	insert into Customer(FirstName,SurName,Addressline1,Postcode,Town,Telephone,Email)
@@ -46,13 +43,10 @@ begin
 
 end
 
-declare @customerId int;
-exec SP_create_Customer @beerid out;
-
 ------------------------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------------------------
-IF OBJECT_ID ( 'Brewery.SP_create_DeliveryNote', 'P' ) IS NOT NULL 
+IF OBJECT_ID ( 'SP_create_DeliveryNote', 'P' ) IS NOT NULL 
     DROP PROCEDURE SP_create_DeliveryNote;
 go
 create procedure SP_create_DeliveryNote
@@ -62,7 +56,6 @@ create procedure SP_create_DeliveryNote
 @CustomerID int
 )
 as
-
 begin
 
 	insert into Deliverynote([date], customerId)
@@ -70,52 +63,24 @@ begin
 	
 	set	@DeliveryNoteID = @@IDENTITY;
 end
-
-declare @DeliveryNoteID int;
-exec SP_create_Customer @DeliveryNoteID out;
-
 ------------------------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------------------------
-IF OBJECT_ID ( 'Brewery.SP_create_DeliveryNoteLine', 'P' ) IS NOT NULL 
+IF OBJECT_ID ( 'SP_create_DeliveryNoteLine', 'P' ) IS NOT NULL 
     DROP PROCEDURE SP_create_DeliveryNoteLine;
 go
 create procedure SP_create_DeliveryNoteLine
 (
 @DeliveryNoteLineID int output,
 @DeliveryNoteId int,
-@BeerId int
-@Quantity int
+@BeerId int,
+@Amount int
 )
 as
-
 begin
 
-	insert into DeliverynoteLine(deliveryNoteId, beerId, quantity)
-	values		(@DeliveryNoteId, @BeerId, @quantity);
-	
-	set	@DeliveryNoteID = @@IDENTITY;
-end
+	insert into DeliverynoteLine(deliveryNoteId, beerId, amount)
+	values		(@DeliveryNoteId, @BeerId, @Amount);
 
-------------------------------------------------------------------------------------------------
-
--------------------------------------------------------------------------------------------------
-IF OBJECT_ID ( 'Brewery.SP_create_DeliveryNoteLine', 'P' ) IS NOT NULL
-    DROP PROCEDURE SP_create_DeliveryNoteLine;
-go
-create procedure SP_create_DeliveryNoteLine
-(
-@DeliveryNoteLineID int output,
-@DeliveryNoteId int,
-@BeerId int
-@Quantity int
-)
-as
-
-begin
-
-	insert into DeliverynoteLine(deliveryNoteId, beerId, quantity)
-	values		(@DeliveryNoteId, @BeerId, @quantity);
-	
 	set	@DeliveryNoteID = @@IDENTITY;
 end

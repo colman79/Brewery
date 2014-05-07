@@ -1,8 +1,8 @@
 create table Customer
 (
 customerId int identity primary key,
-firstName nvarchar(255),
-surname nvarchar(255),
+firstName nvarchar(255) not null,
+surname nvarchar(255) not null,
 addressLine1 nvarchar(255),
 postcode nvarchar(255),
 town nvarchar(255),
@@ -13,13 +13,15 @@ email nvarchar(266)
 create table Beer
 (
 beerId int identity primary key,
-name nvarchar(255)
+name nvarchar(255) not null,
+volume int,
+unique(name)
 )
 
 create table DeliveryNote
 (
 deliveryNoteId int identity primary key,
-date datetime,
+[date] datetime not null,
 customerId int foreign key references Customer(customerId)
 )
 
