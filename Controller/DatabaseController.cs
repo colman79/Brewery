@@ -29,12 +29,41 @@ namespace Controller
             myBeers.Add(new Beer("EDS"));
             myBeers.Add(new Beer("DCB"));
             myBeers.Add(new Beer("IPA"));
-            con = new SqlConnection(DbConnection);
+            
+            /*
+                con = new SqlConnection(DbConnection);
+                cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure; 
+            */
+        }
 
-            cmd = new SqlCommand();
-            cmd.Connection = con;
-            cmd.CommandType = CommandType.StoredProcedure; 
+        public int SaveDeliveryNote()
+        {
+        
+            SqlDataReader rdr  = null;
+            using (SqlConnection con = new SqlConnection(DbConnection))
+            {            
+                SqlCommand cmd = new SqlCommand(
+                    "SP_create_DeliveryNote", con);
 
+                //cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.Add(new SqlParameter("@DeliveryNoteId", SqlDbType.Int)).Direction = ParameterDirection.Output;
+                //cmd.Parameters.Add(new SqlParameter("@date", deliveryNote.DateOfCreation));
+                //cmd.Parameters.Add(new SqlParameter("@CustomerID", deliveryNote.Customer.CustomerID));
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@DeliveryNoteId", SqlDbType.Int)).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(new SqlParameter("@date", DateTime.Now));
+                cmd.Parameters.Add(new SqlParameter("@CustomerID", 1));
+
+                int result = cmd.ExecuteNonQuery();
+
+                int DNID = (int)cmd.Parameters["@deliverynoteId"].Value;
+
+                return 1;
+             }
+
+    
         }
 
     }

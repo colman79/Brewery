@@ -10,11 +10,11 @@ namespace Model
     {
         public DateTime DateOfCreation { get; set; }
         public List<DeliverNoteLine> MyDeliverNoteLines { get; set; }
+        public Customer Customer{get;set;}
 
         public DeliveryNote(DateTime dateofCreation)
         {
             DateOfCreation = dateofCreation;
         }
-
     }
 }

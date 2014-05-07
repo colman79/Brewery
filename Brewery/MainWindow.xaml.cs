@@ -29,8 +29,11 @@ namespace Brewery
             SetBeerList();
             SetCustomerList();
             MyFacadeController.CreateDeliveryNote();
-        }
+           
+            MyFacadeController.SaveDeliveryNote();
 
+        }
+        
         public void SetCustomerList()
         {
             lbBoxCustomer.Items.Clear();

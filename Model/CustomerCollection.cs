@@ -9,10 +9,12 @@ namespace Model
     public class CustomerCollection
     {
         public List<Customer> MyCustomers { get; set; } 
+
         public CustomerCollection (List<Customer> myCustomers )
         {
             MyCustomers=new List<Customer>(myCustomers);
         }
+
 
     }
 }

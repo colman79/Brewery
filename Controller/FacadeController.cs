@@ -57,7 +57,15 @@ namespace Controller
         {
            ActualDeliveryNote = MyDeliveryNoteCollection.CreateDeliveryNote();            
         }
-
-
+        
+        public int SaveDeliveryNote()
+        {
+            DeliveryNote dn = new DeliveryNote(DateTime.Now);
+            
+            DatabaseController db = new DatabaseController();
+            db.SaveDeliveryNote();
+           
+            return 1;
+        }
     }
 }
