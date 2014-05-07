@@ -1,3 +1,7 @@
+------------------------------------------------------------------------------------------------
+--creates******************************************************************
+-------------------------------------------------------------------------------------------------
+
 IF OBJECT_ID ( 'SP_create_Beer', 'P' ) IS NOT NULL 
     DROP PROCEDURE SP_create_Beer;
 go
@@ -83,4 +87,42 @@ begin
 	values		(@DeliveryNoteId, @BeerId, @Amount);
 
 	set	@DeliveryNoteID = @@IDENTITY;
+end
+
+------------------------------------------------------------------------------------------------
+--gets******************************************************************
+-------------------------------------------------------------------------------------------------
+IF OBJECT_ID ( 'SP_get_customer_by_id', 'P' ) IS NOT NULL 
+    DROP PROCEDURE SP_get_customer_by_id;
+go
+create procedure SP_get_customers
+(
+@customerId int
+)
+as
+begin
+	
+	select	customerId,FirstName,SurName,Addressline1,Postcode,Town,Telephone,Email
+	from	Customer
+	where	customerId = @customerId;
+
+end 
+
+------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------
+IF OBJECT_ID ( 'SP_get_customer_by_id', 'P' ) IS NOT NULL 
+    DROP PROCEDURE SP_get_customer_by_id;
+go
+create procedure SP_get_customer_by_id
+(
+@customerId int
+)
+as
+begin
+	
+	select	customerId,FirstName,SurName,Addressline1,Postcode,Town,Telephone,Email
+	from	Customer
+	where	customerId = @customerId;
+
 end
