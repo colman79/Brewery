@@ -1,8 +1,89 @@
 ﻿<Window x:Class="Brewery.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+         Title="MainWindow" Height="582.125" Width="750">
+    <Window.Resources>
+        <DropShadowEffect x:Key="DropShadow" ShadowDepth="1" BlurRadius="2" Color="#FF6DB2BB" Opacity="0.585"/>
+    </Window.Resources>
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFEAEEEA" Offset="0"/>
+            <GradientStop Color="#FFE0EAE0" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
-        
+        <Label Content="Type beer name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="445.998,64.96,0,0"/>
+        <Label Content="Beer size" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="445.998,263.506,0,0"/>
+        <Image HorizontalAlignment="Left" Height="638.322" Margin="-41,-114,-410.45,-55.322" VerticalAlignment="Top" Width="1193.45" Source="pack://siteoforigin:,,,/pixel-wave-background.jpg" Opacity="0.04" RenderTransformOrigin="0.5,0.5" >
+
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.268"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-1.495"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <ListBox HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="270" Margin="42,100,0,0" Effect="{DynamicResource DropShadow}"/>
+        <ListBox HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="270" Margin="435.999,100,0,0" Effect="{DynamicResource DropShadow}"/>
+        <Label Content="Type customer name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="42,62,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="5" VerticalAlignment="Top" Width="748.75" Margin="10,26.507,-16.75,0" Stroke="#FFECFFEC" IsEnabled="False" Effect="{DynamicResource DropShadow}">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.491"/>
+                    <GradientStop Color="White" Offset="0.004"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FFE0FFE9" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label Content="Add New Customer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34.978,229,0,0" FontSize="14.667"/>
+        <Label Content="First name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34.978,263.506,0,0"/>
+        <Label Content="Last name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34.978,294.466,0,0"/>
+        <Label Content="Street " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34.978,325.426,0,0"/>
+        <Label Content="City" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34.978,356.386,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="104.876,266.466,0,0" Effect="{DynamicResource DropShadow}"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="104.876,328.386,0,0" Effect="{DynamicResource DropShadow}"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="104.876,297.426,0,0" Effect="{DynamicResource DropShadow}"/>
+        <Label Content="E-mail&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34.978,391.539,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="104.876,394.499,0,0" Effect="{DynamicResource DropShadow}"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="66.679" Margin="104.876,359.346,0,0" Effect="{DynamicResource DropShadow}"/>
+        <Label Content="Telephone" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="33.004,428.04,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="74.653" Margin="104.876,431,0,0" Effect="{DynamicResource DropShadow}"/>
+        <Label Content="Quantity" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="445.998,294.466,0,0"/>
+        <ComboBox HorizontalAlignment="Left" Margin="537.999,264.546,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" Height="21.96" Effect="{DynamicResource DropShadow}">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                    <GradientStop Color="#FF008BFF" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <MenuItem Header="0.33 L" StaysOpenOnClick="True" FontStyle="Italic"/>
+            <MenuItem Header="0.5 L" FontStyle="Italic" HorizontalAlignment="Left"/>
+        </ComboBox>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="192,64.96,0,0" Effect="{DynamicResource DropShadow}"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="585.999,64.96,0,0" Effect="{DynamicResource DropShadow}"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="537.999,294.466,0,0" Effect="{DynamicResource DropShadow}"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="32.876" Margin="192,359.346,0,0" Effect="{DynamicResource DropShadow}"/>
+        <Rectangle HorizontalAlignment="Left" Height="5" VerticalAlignment="Top" Width="748.75" Margin="0,219,-6.75,0" Stroke="#FFECFFEC" IsEnabled="False" Effect="{DynamicResource DropShadow}">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.491"/>
+                    <GradientStop Color="White" Offset="0.004"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FFE0FFE9" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label Content="Delivery note" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Margin="306,0,0,0"/>
+        <Button Style="{DynamicResource GlassButton}" 
+            Margin="0,0,603.232,10" 
+            Name="button1" 
+            Height="46.556" 
+            VerticalAlignment="Bottom" 
+            HorizontalAlignment="Right" 
+            Width="105.764" FontSize="16">Button
+            </Button>
     </Grid>
 </Window>
