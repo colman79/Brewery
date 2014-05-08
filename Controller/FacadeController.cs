@@ -30,6 +30,7 @@ namespace Controller
         public void BLaBLaBLa()
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             int testint = 0;
 =======
             List<string> customerList = new List<string>();
@@ -39,6 +40,9 @@ namespace Controller
             }
             return customerList;
 >>>>>>> 03ae7bfbd806332d276699bb157cbbbb0d63bff9
+=======
+            
+>>>>>>> parent of 03ae7bf... changed blablabla
             //hello
         }
 
@@ -51,7 +55,6 @@ namespace Controller
             }
             return customerList;
         }
-
         public List<string> GetBeers()
         {
             List<string> beerList = new List<string>();
@@ -61,6 +64,8 @@ namespace Controller
             }
             return beerList;
         }
+
+       
 
         public void CreateDeliveryNote()  
         {
