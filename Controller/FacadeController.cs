@@ -29,16 +29,7 @@ namespace Controller
 
         public void BLaBLaBLa()
         {
-<<<<<<< HEAD
             int testint = 0;
-=======
-            List<string> customerList = new List<string>();
-            foreach (Customer c in MyCustomerCollection.MyCustomers)
-            {
-                customerList.Add(c.Name);
-            }
-            return customerList;
->>>>>>> 03ae7bfbd806332d276699bb157cbbbb0d63bff9
             //hello
         }
 
@@ -51,7 +42,6 @@ namespace Controller
             }
             return customerList;
         }
-
         public List<string> GetBeers()
         {
             List<string> beerList = new List<string>();
@@ -61,6 +51,8 @@ namespace Controller
             }
             return beerList;
         }
+
+       
 
         public void CreateDeliveryNote()  
         {
