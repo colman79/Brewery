@@ -14,8 +14,8 @@ namespace Model
         public DeliverNoteLine(int quantity)
         {
             Quantity = quantity;
-
         }
+        
 
     }
 }
