@@ -37,7 +37,7 @@ namespace Controller
             */
         }
 
-        public int SaveDeliveryNote()
+        public int SaveDeliveryNote(DeliveryNote actualDeliveryNote)
         {
         
             SqlDataReader rdr  = null;
