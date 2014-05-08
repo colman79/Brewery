@@ -27,6 +27,7 @@ namespace Controller
 
         }
 
+<<<<<<< HEAD
         public void BLaBLaBLa()
         {
 <<<<<<< HEAD
@@ -53,6 +54,9 @@ namespace Controller
 >>>>>>> parent of 03ae7bf... changed blablabla
             //hello
         }
+=======
+       
+>>>>>>> 14004d26276928938475ee8fef5ff57d92b1a749
 
         public List<string> GetCustomers()
         {
