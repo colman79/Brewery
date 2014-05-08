@@ -29,11 +29,7 @@ namespace Controller
 
         public void BLaBLaBLa()
         {
-<<<<<<< HEAD
             int testint = 0;
-=======
-            
->>>>>>> parent of 03ae7bf... changed blablabla
             //hello
         }
 
