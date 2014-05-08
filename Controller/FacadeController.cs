@@ -16,6 +16,7 @@ namespace Controller
         public DatabaseController MyDatabaseController;
         public DeliveryNote ActualDeliveryNote { get; set; }
 
+
         public FacadeController()
         {
             MyDatabaseController = new DatabaseController();
@@ -23,6 +24,12 @@ namespace Controller
             MyCustomerCollection=new CustomerCollection(MyDatabaseController.MyCustomers);
             MyDeliveryNoteCollection=new DeliveryNoteCollection();
 
+        }
+
+        public void BLaBLaBLa()
+        {
+            
+            //hello
         }
 
         public List<string> GetCustomers()
