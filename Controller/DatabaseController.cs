@@ -12,7 +12,7 @@ namespace Controller
 {
     public class DatabaseController
     {
-        const string DbConnection = @"Data Source=ealdb1.eal.local;User ID=ejl22_usr;Password=Baz1nga22"; // don`t forget @ before the connection!!! change this to ur own db address
+        const string DbConnection = @"Data Source=ealdb1.eal.local;User ID=ejl17_usr;Password=Baz1nga17"; // don`t forget @ before the connection!!! change this to ur own db address
 
         SqlConnection con;
         SqlCommand cmd;
@@ -41,8 +41,8 @@ namespace Controller
         {
         
             SqlDataReader rdr  = null;
-            using (SqlConnection con = new SqlConnection(DbConnection))
-            {            
+            SqlConnection con = new SqlConnection(DbConnection);
+                  con.Open();      
                 SqlCommand cmd = new SqlCommand(
                     "SP_create_DeliveryNote", con);
 
@@ -61,7 +61,7 @@ namespace Controller
                 int DNID = (int)cmd.Parameters["@deliverynoteId"].Value;
 
                 return 1;
-             }
+             
 
     
         }
